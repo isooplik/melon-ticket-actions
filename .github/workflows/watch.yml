@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Ticket Availability
-        uses: mooyoul/melon-ticket-actions@v1.1.0
+        uses: isooplik/melon-ticket-actions@master
         with:
           product-id: 212148        # 멜론 공연 ID (공연 페이지 URL의 prodId=숫자)
           schedule-id: 100001            # 스케줄 ID (날짜/시간별 ID, 몰라도 일단 숫자 넣어두기)
