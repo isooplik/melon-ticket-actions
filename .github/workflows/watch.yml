@@ -12,8 +12,8 @@ jobs:
       - name: Check Ticket Availability
         uses: mooyoul/melon-ticket-actions@v1.1.0
         with:
-          product-id: 211742        # 멜론 공연 ID (공연 페이지 URL의 prodId=숫자)
-          schedule-id: 100001             # 스케줄 ID (날짜/시간별 ID, 몰라도 일단 숫자 넣어두기)
-          seat-id: 1_0                    # 좌석 ID (테스트용)
+          product-id: 212148        # 멜론 공연 ID (공연 페이지 URL의 prodId=숫자)
+          schedule-id: 100001            # 스케줄 ID (날짜/시간별 ID, 몰라도 일단 숫자 넣어두기)
+          seat-id: 29_117             # 좌석 ID (테스트용)
           slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           message: '🎫 취소표 떴다! 얼른 확인해!'
