@@ -21,20 +21,27 @@ const qs = require("querystring");
     });
     const message = (_a = core.getInput("message")) !== null && _a !== void 0 ? _a : "티켓사세요";
     const webhook = new webhook_1.IncomingWebhook(webhookUrl);
-    const res = await axios_1.default({
-        method: "POST",
-        url: "https://ticket.melon.com/tktapi/product/seatStateInfo.json",
-        params: {
-            v: "1",
-        },
-        data: qs.stringify({
-            prodId: productId,
-            scheduleNo: scheduleId,
-            seatId,
-            volume: 1,
-            selectedGradeVolume: 1,
-        }),
-    });
+    const res = await axios.default({
+  method: "POST",
+  url: "https://ticket.melon.com/ktapp/product/seatStateInfo.json",
+  headers: {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+    "Referer": "https://ticket.melon.com/performance/index.htm?prodId=212148",
+    "Origin": "https://ticket.melon.com",
+    "Cookie": "복사한_쿠키값_여기에_붙여넣기"
+  },
+  params: {
+    v: "1",
+  },
+  data: qs.stringify({
+    productId,
+    scheduleId,
+    seatId,
+    selectedGradeVolume: 1,
+    volume: 1,
+  }),
+});
+
     // tslint:disable-next-line
     console.log("Got response: ", res.data);
     if (res.data.chkResult) {
