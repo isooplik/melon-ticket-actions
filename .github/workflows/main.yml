@@ -9,7 +9,7 @@ jobs:
       - name: Prepare
         run: npm ci
       - name: Lint
-        uses: mooyoul/tslint-actions@master
+        uses: isooplik/melon-ticket-actions@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pattern: '*.ts'
